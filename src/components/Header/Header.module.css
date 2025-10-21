@@ -1,0 +1,55 @@
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.heroBg {
+    object-fit:cover;
+    object-position: 45% 55%;
+    z-index: 0;
+} 
+
+.heroOverlay{
+    position: absolute; inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+
+.logo{
+    position: relative;
+    margin-left: 69px;
+    margin-top: 51px;
+    z-index: 2;
+}
+
+.heroContent{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 70%;
+    z-index: 2;
+}
+
+.titleH1{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    color: #FFD15B;
+    font-size: 44px;
+    margin-top: 170px;
+}
+
+.heroSearch{
+    margin-top: 30px;
+    margin-bottom: 188px;
+    position: relative;
+    width: 70%;
+}
+
+
+
+
+

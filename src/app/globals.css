@@ -1,0 +1,38 @@
+
+:root {
+  --background: #E5E5E5;
+  --foreground: #1B1B1B;
+}
+
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-manrope), system-ui, sans-serif; 
+  line-height: 1.5;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+}
+
+
+h1, h2{
+  font-family: var(--font-anton), var(--font-manrope), sans-serif;
+  font-weight: 400; 
+}
+
+
+a { color: inherit; text-decoration: none; }
+a:hover, a:focus-visible { text-decoration: underline; }
+
+
+img, svg, video { display: block; max-width: 100%; height: auto; }
+
+span, h3,p{
+  font-family: var(--font-manrope), sans-serif;
+}
+
