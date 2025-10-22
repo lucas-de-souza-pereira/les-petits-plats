@@ -1,17 +1,19 @@
-import LoopCta from "../LoopCta/LoopCta"
-import styles from "@/components/SearchBar/SearchBar.module.css"
+import LoopCta from "./LoopCta"
 
-export default function SearchBar() {
+import s from '@/components/SearchBar/SearchBar.module.css'
+export default function SearchBar({
+
+}) {
   return (
-    <>
+      <form className={s.heroSearch}>
         <input
         type="search"
         id= "search-bar"
-        className={styles.searchBar}
+        className={s.searchBar}
         placeholder="Rechercher une recette, un ingrédient, ..."
         />
 
         <LoopCta/>
-    </>
+      </form>
   )
 }

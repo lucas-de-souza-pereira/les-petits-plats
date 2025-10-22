@@ -1,7 +1,5 @@
 
 import styles from "./page.module.css";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
 
 import FilterCard from "@/components/FilterCard/FilterCard";
 
@@ -12,16 +10,21 @@ import recipes from "@/data/recipes.json"
 import "./styles.css";
 
 
+import Hero from "@/components/Header/Hero";
+import SearchBar from "@/components/SearchBar/SearchBar";
+
 export default function Home() {
   return (
     <>
-    <Header/>
+      <Hero title={<>DÉCOUVREZ NOS RECETTES<br/>DU QUOTIDIEN, SIMPLES ET DÉLICIEUSES</>}>
+        <SearchBar/>
+      </Hero>
 
     <main>
         <p>les petits plats home</p>
         <FilterCard/>
 
-        <div className={styles.recipeCard}>
+        <div className={styles.recipeCards}>
           
           {recipes.map((recipe)=>(
             <RecipeCard key={recipe.id} {...recipe}/>
@@ -30,7 +33,6 @@ export default function Home() {
         </div>
     </main>
 
-    <Footer/>
     </>
   );
 }

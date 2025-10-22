@@ -1,4 +1,4 @@
-import styles from "@/components/LoopCta/LoopCta.module.css"
+import styles from "@/components/SearchBar/LoopCta.module.css"
 
 export default function LoopCta() {
 

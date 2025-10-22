@@ -26,7 +26,9 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <body className={`${manrope.variable} ${anton.variable}`}>
         {children}
+        <Footer/>
       </body>
+      
     </html>
   );
 }

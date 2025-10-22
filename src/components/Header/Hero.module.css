@@ -1,0 +1,58 @@
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    display: grid;
+    align-self: center;
+}
+
+.sm{min-height: 128px;}
+.md{min-height: 667px;}
+.full{  
+    min-height: clamp(420px, 83vh, 805px);
+    max-height: 805px; 
+    ;}
+
+.heroBg {
+    object-fit:cover;
+    object-position: 45% 55%;
+    z-index: 0;
+} 
+
+.heroOverlay{
+    position: absolute; inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+
+.heroContent{
+    position: relative;
+    z-index: 2;
+    width: 70%;
+    justify-self: center;
+    align-self: start;
+}
+
+
+.homePage{
+    width: 70%;
+    text-align: center;
+    color: #FFD15B;
+    font-size: 44px;
+    margin: 168px auto 0; 
+}
+
+.notFound{
+    text-align: center;
+    color: #FFD15B;
+    font-size: clamp(28px, 6vw, 70px);
+    margin: 0;
+}
+
+
+.notFound small{
+    color: white;
+    font-size: clamp(16px, 3vw, 40px);
+}
+

@@ -1,10 +1,10 @@
-.recipeCard{
+.recipeCards{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 90%;
-  margin: auto;
+  grid-template-columns: repeat(3, 23.75rem);
+  justify-content: space-around;
+  margin: 0 auto 60px;
   row-gap: 66px;
-  margin-bottom: 60px;
+  width: 90%;
 }
 
 
