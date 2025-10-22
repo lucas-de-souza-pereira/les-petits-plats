@@ -1,0 +1,23 @@
+.ingredients{
+  display: grid;
+  gap: 18px 32px;
+  margin: 0;
+  margin-top: 15px;
+}
+.row{
+  display: grid;
+  grid-template-rows: auto auto; 
+  align-content: start;
+}
+.name{
+  margin: 0;
+  font-weight: 500;
+  overflow-wrap: anywhere; 
+    font-size: 14px;
+}
+.qty{
+  margin: 2px 0 0;
+  color: #7A7A7A;
+  font-size: 14px;
+  font-weight: 400;
+}

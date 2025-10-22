@@ -33,12 +33,8 @@ export default function RecipeCard({slug,image,name,time,description, ingredient
                 <p className={s.description}>{description}</p>
 
                 <h3>Ingrédients</h3>
+                <IngredientList items={ingredients} columns={2} />
 
-                <div className={"ingredientItem"}>
-                    {ingredients.map((item,index)=>(
-                        <IngredientList key={index} item={item} index={index}/>
-                    ))}
-                </div>
             </div>
         </Link>
     </article>
