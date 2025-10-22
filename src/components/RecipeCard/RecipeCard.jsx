@@ -4,10 +4,11 @@ import s from "@/components/RecipeCard/RecipeCard.module.css"
 import Image from "next/image"
 import Link from "next/link"
 import { IMAGE_PATH } from "@/utils/config"
-import RecipeItem from "../RecipeItem/RecipeItem"
+import IngredientList from "../Recipe/IngredientList"
+import TimeBadge from "../UI/TimeBadge/TimeBadge";
 
 export default function RecipeCard({slug,image,name,time,description, ingredients}) {
-  return (
+    return (
     <article className={s.recipeCard}>
         <Link href={`recette/${slug}`}>
             <div className={s.headCard}>
@@ -18,7 +19,9 @@ export default function RecipeCard({slug,image,name,time,description, ingredient
                 className={s.imageCard}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                <span className={s.time}>{time+"min"}</span>
+                <div className={s.time}>
+                    <TimeBadge time={time} size={"sm"}/>
+                </div>
             </div>
 
             <div className={s.recipeCardContent}>
@@ -33,7 +36,7 @@ export default function RecipeCard({slug,image,name,time,description, ingredient
 
                 <div className={"ingredientItem"}>
                     {ingredients.map((item,index)=>(
-                        <RecipeItem key={index} item={item} index={index}/>
+                        <IngredientList key={index} item={item} index={index}/>
                     ))}
                 </div>
             </div>

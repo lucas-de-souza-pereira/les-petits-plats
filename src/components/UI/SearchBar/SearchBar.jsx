@@ -1,6 +1,6 @@
 import LoopCta from "./LoopCta"
 
-import s from '@/components/SearchBar/SearchBar.module.css'
+import s from '@/components/UI/SearchBar/SearchBar.module.css'
 export default function SearchBar({
 
 }) {

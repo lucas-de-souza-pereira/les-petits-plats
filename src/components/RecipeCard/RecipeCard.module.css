@@ -24,15 +24,6 @@
     position: absolute;
     top: 21px;
     right: 22px;
-    background: #FFD15B;
-    width: 63px;
-    height: 26px;
-    border-radius: 14px;
-    font-weight: 400;
-    font-size: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .recipeCardContent{

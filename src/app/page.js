@@ -11,7 +11,7 @@ import "./styles.css";
 
 
 import Hero from "@/components/Header/Hero";
-import SearchBar from "@/components/SearchBar/SearchBar";
+import SearchBar from "@/components/UI/SearchBar/SearchBar";
 
 export default function Home() {
   return (

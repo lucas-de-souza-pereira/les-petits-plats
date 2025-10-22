@@ -1,6 +1,6 @@
 
 
-export default function RecipeItem({item, index}) {
+export default function IngredientList({item, index}) {
 let u
 if (!item.unit){u=null}
 if (item.unit){
