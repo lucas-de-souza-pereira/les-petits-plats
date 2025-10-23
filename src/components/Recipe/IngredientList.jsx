@@ -1,7 +1,7 @@
-import s from "@/components/Recipe/IngredientList.module.css"
+import s from "@/components/Recipe/RecipeList.module.css"
 
-export default function IngredientList({items,columns}) {
-  console.log(items)
+export default function IngredientList({items,columns,fontSize}) {
+
   return (
     <dl 
         className={s.ingredients}
@@ -10,8 +10,12 @@ export default function IngredientList({items,columns}) {
       
       {items.map(({ ingredient, quantity, unit }, i) => (
         <div className={s.row} key={`${ingredient}-${i}`}>
-          <dt className={s.name}>{ingredient}</dt>
-          <dd className={s.qty}>{formatQty(quantity, unit)}</dd>
+          <dt className={s.name} style={{fontSize:fontSize}}>
+            {ingredient[0].toUpperCase()}{ingredient.slice(1)}
+          </dt>
+          <dd className={s.qty} style={{fontSize:fontSize}}>
+            {formatQty(quantity, unit)}
+          </dd>
         </div>
       ))}
     </dl>

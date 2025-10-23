@@ -16,10 +16,6 @@
     aspect-ratio: 3/2;
 }
 
-.imageCard{
-    object-fit: cover;
-}
-
 .time{
     position: absolute;
     top: 21px;

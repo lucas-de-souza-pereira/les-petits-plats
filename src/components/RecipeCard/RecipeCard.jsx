@@ -6,19 +6,14 @@ import Link from "next/link"
 import { IMAGE_PATH } from "@/utils/config"
 import IngredientList from "../Recipe/IngredientList"
 import TimeBadge from "../UI/TimeBadge/TimeBadge";
+import RecipeImage from "../Recipe/RecipeImage";
 
 export default function RecipeCard({slug,image,name,time,description, ingredients}) {
     return (
     <article className={s.recipeCard}>
         <Link href={`recette/${slug}`}>
             <div className={s.headCard}>
-                <Image 
-                src={IMAGE_PATH+image}
-                alt={name}
-                fill
-                className={s.imageCard}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
+                <RecipeImage image={image} name={name}/>
                 <div className={s.time}>
                     <TimeBadge time={time} size={"sm"}/>
                 </div>
@@ -33,7 +28,7 @@ export default function RecipeCard({slug,image,name,time,description, ingredient
                 <p className={s.description}>{description}</p>
 
                 <h3>Ingrédients</h3>
-                <IngredientList items={ingredients} columns={2} />
+                <IngredientList items={ingredients} columns={2} fontSize={14} />
 
             </div>
         </Link>
