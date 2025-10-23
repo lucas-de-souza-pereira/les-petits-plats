@@ -1,0 +1,18 @@
+.searchBar{
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 26px;
+    padding-left: 35px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #7A7A7A;
+    border-radius: 11px;
+    border: none;
+}
+
+.heroSearch{
+
+    position: relative;
+    width: 95%;
+    margin: 30px auto 188px;
+}

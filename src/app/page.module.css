@@ -1,0 +1,10 @@
+.recipeCards{
+  display: grid;
+  grid-template-columns: repeat(3, 23.75rem);
+  justify-content: space-around;
+  margin: 0 auto 60px;
+  row-gap: 66px;
+  width: 90%;
+}
+
+
