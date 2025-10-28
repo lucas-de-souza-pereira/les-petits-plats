@@ -9,9 +9,10 @@ import recipes from "@/data/recipes.json"
 
 import "./styles.css";
 
-
 import Hero from "@/components/Header/Hero";
 import SearchBar from "@/components/UI/SearchBar/SearchBar";
+
+import LabelSearch from "@/components/FilterCard/LabelSearch";
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
     <main>
         <p>les petits plats home</p>
         <FilterCard/>
-
+        <LabelSearch>Test</LabelSearch>
         <div className={styles.recipeCards}>
           
           {recipes.map((recipe)=>(

@@ -1,9 +1,7 @@
 'use client';
 
 import s from "@/components/RecipeCard/RecipeCard.module.css"
-import Image from "next/image"
 import Link from "next/link"
-import { IMAGE_PATH } from "@/utils/config"
 import IngredientList from "../Recipe/IngredientList"
 import TimeBadge from "../UI/TimeBadge/TimeBadge";
 import RecipeImage from "../Recipe/RecipeImage";
@@ -24,7 +22,6 @@ export default function RecipeCard({slug,image,name,time,description, ingredient
                 <h2>{name}</h2>
 
                 <h3>Recette</h3>
-
                 <p className={s.description}>{description}</p>
 
                 <h3>Ingrédients</h3>
