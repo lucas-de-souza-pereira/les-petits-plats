@@ -39,10 +39,11 @@ export default function FilterCard({  type, label, isOpen, onToggle }) {
           />
           <button className={s.cross} onClick={() => setQ("")} aria-label="Effacer la recherche">
             {/* cross */}
+            {q && (
             <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M6.5 6.5L3.5 3.5M3.5 3.5L0.5 0.5M3.5 3.5L6.5 0.5M3.5 3.5L0.5 6.5"
                 stroke="#7A7A7A" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            </svg>)}
           </button>
           {/* loop */}
           <svg className={s.loop} width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">

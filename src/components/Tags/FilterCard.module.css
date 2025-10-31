@@ -15,7 +15,7 @@
 .labelSearch{
     display: flex;
     flex-direction: row;
-    gap: 63px;
+    gap: 12px;
     justify-content: space-between;
     
     background-color: white;
@@ -50,10 +50,11 @@
 
 .cross{
     position: absolute;
-    right: 35px;
-    top: 15px;
+    right: 32px;
+    top: 14px;
     background:none;
     border: 0;
+    cursor: pointer;
 }
 
 .loop{
