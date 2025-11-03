@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Hero title={<>DÉCOUVREZ NOS RECETTES<br/>DU QUOTIDIEN, SIMPLES ET DÉLICIEUSES</>}>
-        <SearchBar id={"search-bar"}className={"searchBar"}/>
+        <SearchBar />
       </Hero>
 
     <main>

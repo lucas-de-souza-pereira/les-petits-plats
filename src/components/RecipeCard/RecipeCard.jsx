@@ -6,6 +6,7 @@ import IngredientList from "../Recipe/IngredientList"
 import TimeBadge from "../UI/TimeBadge/TimeBadge";
 import RecipeImage from "../Recipe/RecipeImage";
 
+// composant carte recette 
 export default function RecipeCard({slug,image,name,time,description, ingredients}) {
     return (
     <article className={s.recipeCard}>

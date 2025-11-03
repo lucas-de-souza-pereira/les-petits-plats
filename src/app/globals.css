@@ -36,3 +36,7 @@ span, h3,p,button, input,li{
   font-family: var(--font-manrope), sans-serif;
 }
 
+main{
+    max-width: 1600px;
+    margin: auto;
+}

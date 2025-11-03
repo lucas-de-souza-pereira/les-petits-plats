@@ -1,23 +1,27 @@
 .filters{
-  width: 89%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 60px auto;
+    width: 89%;
+    margin: 60px auto;
+    position: relative;
 }
 
 .row{
-  display: flex;
-  gap: 16px;
-  align-items: flex-start; 
-  flex-wrap: wrap;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start; 
+    flex-wrap: wrap;
 }
 
 .tags{
-  margin-top: 16px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+    margin-top: 16px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.counter{
+    position: absolute;
+    right: 0;
+    top:12px;
 }
 
 .counter span{

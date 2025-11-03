@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Image from "next/image"
 import s from "@/components/Header/Brand.module.css"
 
 export default function Brand() {

@@ -17,7 +17,6 @@ export default function FiltersBar() {
   return (
     <>
       <div className={s.filters}>
-        <div className={s.column}>
           <div className={s.row}>
             <FilterCard
               type="ingredients"
@@ -51,12 +50,10 @@ export default function FiltersBar() {
               <Tag key={`ust-${v}`} type="ustensils">{v}</Tag>
             ))}
           </div>
-          </div>
-        <div className={s.counter} style={{ minWidth: 120, textAlign: "right" }}>
+                  <div className={s.counter} >
           <RecipesCount />
         </div>
-      </div>
-
+          </div>
 
     </>
   );
