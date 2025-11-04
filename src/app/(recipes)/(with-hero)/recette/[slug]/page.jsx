@@ -1,7 +1,7 @@
 import recipes from  "@/data/recipes.json"
 import { notFound } from "next/navigation"
 
-import s from '@/app/(recipes)/recette/[slug]/recipe.module.css'
+import s from '@/app/(recipes)/(with-hero)/recette/[slug]/recipe.module.css'
 
 import RecipeImage from "@/components/Recipe/RecipeImage"
 import TimeBadge from "@/components/UI/TimeBadge/TimeBadge"
@@ -16,7 +16,6 @@ export default async function RecipePage({params}) {
     if (!r) {return notFound()}
 
     return (
-
     <article className={s.page}>
 
         <div className={s.grid}>
@@ -41,12 +40,12 @@ export default async function RecipePage({params}) {
 
                 <section>
                     <h2 className={s.sectionTitle}>Ustensiles nécessaires</h2>
-                    <ToolList items={r.appliance} fontSize={16}/>
+                    <ToolList items={r.ustensils} fontSize={16}/>
                 </section>
 
                 <section>
                     <h2 className={s.sectionTitle}>Appareils nécessaires</h2>
-                    <ToolList items={r.ustensils} fontSize={16}/>
+                    <ToolList items={r.appliance} fontSize={16}/>
                 </section>
 
                 <section>
@@ -54,11 +53,6 @@ export default async function RecipePage({params}) {
                     <p>{r.description}</p>
                 </section>
             </div>
-
-
-
-
-
         </div>
     </article>
 

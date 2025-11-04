@@ -1,0 +1,32 @@
+.filters{
+    width: 89%;
+    margin: 60px auto;
+    position: relative;
+}
+
+.row{
+    display: flex;
+    gap: 16px;
+    align-items: flex-start; 
+    flex-wrap: wrap;
+}
+
+.tags{
+    margin-top: 16px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.counter{
+    position: absolute;
+    right: 0;
+    top:12px;
+}
+
+.counter span{
+    font-family: var(--font-anton);
+    font-size: 21px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}

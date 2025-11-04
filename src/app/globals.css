@@ -32,7 +32,11 @@ a:hover, a:focus-visible { text-decoration: underline; }
 
 img, svg, video { display: block; max-width: 100%; height: auto; }
 
-span, h3,p{
+span, h3,p,button, input,li{
   font-family: var(--font-manrope), sans-serif;
 }
 
+main{
+    max-width: 1600px;
+    margin: auto;
+}

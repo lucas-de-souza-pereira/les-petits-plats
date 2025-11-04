@@ -1,38 +1,28 @@
 
-import styles from "./page.module.css";
-
-import FilterCard from "@/components/FilterCard/FilterCard";
-
-import RecipeCard from "@/components/RecipeCard/RecipeCard";
+import RecipesGrid from "@/components/RecipeCard/RecipesGrid";
 
 import recipes from "@/data/recipes.json"
-
-import "./styles.css";
 
 
 import Hero from "@/components/Header/Hero";
 import SearchBar from "@/components/UI/SearchBar/SearchBar";
 
+import { TagsProvider } from "@/components/Tags/FilterContext"; 
+import Filtersbar from "@/components/Tags/FiltersBar";
+
 export default function Home() {
   return (
-    <>
+  <>
+    <TagsProvider data={recipes}>
       <Hero title={<>DÉCOUVREZ NOS RECETTES<br/>DU QUOTIDIEN, SIMPLES ET DÉLICIEUSES</>}>
-        <SearchBar/>
+        <SearchBar />
       </Hero>
 
-    <main>
-        <p>les petits plats home</p>
-        <FilterCard/>
-
-        <div className={styles.recipeCards}>
-          
-          {recipes.map((recipe)=>(
-            <RecipeCard key={recipe.id} {...recipe}/>
-          ))}
-
-        </div>
-    </main>
-
-    </>
+      <main>
+        < Filtersbar />
+        <RecipesGrid />
+      </main>
+    </TagsProvider>
+  </>
   );
 }
