@@ -4,7 +4,13 @@ import s from '@/components/UI/SearchBar/SearchBar.module.css'
 import { useEffect, useState, useRef } from 'react'
 import { useTags } from '@/components/Tags/FilterContext'
 
-
+/**
+ * SearchBar.jsx
+ * -------------
+ * Barre de recherche principale (recherche live + validation par tag)
+ * - Recherche "live" déclenchée après 300 ms d'inactivité
+ * - Validation du formulaire crée un tag "keywords"
+ */
 export default function SearchBar() {
   const { addTag, setLiveQuery } = useTags()
   const [q, setQ] = useState("")

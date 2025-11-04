@@ -1,10 +1,12 @@
 "use client";
 import { createContext, useContext, useState } from "react";
 
+/* -------------------- CONTEXT SETUP -------------------- */
+
 const TagsCtx = createContext(null)
 export const useTags = () => useContext(TagsCtx)
 
-/* -------------------- helpers -------------------- */
+/* -------------------- HELPERS -------------------- */
 
 const lower = (s) => String(s ?? "").trim().toLowerCase()
 const upper = (s) => s ? s.charAt(0).toUpperCase() + s.slice(1) : s
@@ -23,7 +25,7 @@ const singularizeLastWord = (label) => {
 
 const keyOf = (label) => singularizeLastWord(stripAccents(lower(label)))
 
-/* -------------------- Provider -------------------- */
+/* -------------------- PROVIDER -------------------- */
 export function TagsProvider({ data, children }) {
   const [selected, setSelected] = useState({
     ingredients: [],
