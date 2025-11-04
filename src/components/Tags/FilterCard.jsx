@@ -4,9 +4,11 @@ import s from "@/components/Tags/FilterCard.module.css"
 import { useState} from "react"
 import { useTags } from "./FilterContext"
 
-export default function FilterCard({  type, label, isOpen, onToggle }) {
+export default function FilterCard({  type, label }) {
   const [q, setQ] = useState("")
-  const { available, selected, addTag, removeTag } = useTags()
+  const [isOpen, setIsOpen] = useState(false)
+  const { available, selected, addTag, removeTag, upper  } = useTags()
+
 
   const list = available[type].filter(v =>
     v.toLowerCase().includes(q.trim().toLowerCase())
@@ -16,7 +18,7 @@ export default function FilterCard({  type, label, isOpen, onToggle }) {
 
   return (
     <div className={s.filterCard}>
-      <button className={s.labelSearch} onClick={onToggle}>
+      <button className={s.labelSearch} onClick={()=>setIsOpen(!isOpen)}>
         {label}
         {isOpen ? (
           // up
@@ -37,14 +39,18 @@ export default function FilterCard({  type, label, isOpen, onToggle }) {
             value={q}
             onChange={e => setQ(e.target.value)}
           />
-          <button className={s.cross} onClick={() => setQ("")} aria-label="Effacer la recherche">
-            {/* cross */}
+          {/* cross */}
+          
+            
             {q && (
-            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.5 6.5L3.5 3.5M3.5 3.5L0.5 0.5M3.5 3.5L6.5 0.5M3.5 3.5L0.5 6.5"
-                stroke="#7A7A7A" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>)}
-          </button>
+              <button className={s.cross} onClick={() => setQ("")} aria-label="Effacer la recherche">
+                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.5 6.5L3.5 3.5M3.5 3.5L0.5 0.5M3.5 3.5L6.5 0.5M3.5 3.5L0.5 6.5"
+                    stroke="#7A7A7A" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+            </button>
+          )}
+          
           {/* loop */}
           <svg className={s.loop} width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="5" cy="5" r="4.75" stroke="#7A7A7A" strokeWidth="0.5"/>
@@ -55,7 +61,7 @@ export default function FilterCard({  type, label, isOpen, onToggle }) {
             <ul className={s.selectedList}>
               {selectedList.map((v) => (
                 <li key={`sel-${v}`} className={s.selectedItem}>
-                  <span className={s.selectedLabel}>{v}</span>
+                  <span className={s.selectedLabel}>{upper(v)}</span>
                   <button
                     className={s.removeBtn}
                     onClick={() => removeTag(type, v)}
@@ -80,7 +86,7 @@ export default function FilterCard({  type, label, isOpen, onToggle }) {
                 onClick={() => addTag(type, v)}
                 style={{ cursor: "pointer" }}
               >
-                {v}
+                {upper(v)}
               </li>
             ))}
           </ul>

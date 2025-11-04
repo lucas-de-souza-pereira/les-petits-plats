@@ -36,3 +36,12 @@
     background-color: #FFD15B;
     color: #000000;
 }
+
+.cross{
+    position: absolute;
+    right: 85px;
+    top: calc(50% - 8px);
+    background:none;
+    border: 0;
+    cursor: pointer;
+}

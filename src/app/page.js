@@ -12,20 +12,17 @@ import Filtersbar from "@/components/Tags/FiltersBar";
 
 export default function Home() {
   return (
-    <>
+  <>
+    <TagsProvider data={recipes}>
       <Hero title={<>DÉCOUVREZ NOS RECETTES<br/>DU QUOTIDIEN, SIMPLES ET DÉLICIEUSES</>}>
         <SearchBar />
       </Hero>
 
-    <main>
-
-        <TagsProvider data={recipes}>
-            < Filtersbar />
-            <RecipesGrid />
-        </TagsProvider>
-
-    </main>
-
-    </>
+      <main>
+        < Filtersbar />
+        <RecipesGrid />
+      </main>
+    </TagsProvider>
+  </>
   );
 }

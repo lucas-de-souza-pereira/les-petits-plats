@@ -3,16 +3,11 @@
 import FilterCard from "./FilterCard";
 import Tag from "../Tags/Tag";
 import { useTags } from "./FilterContext";
-import { useState } from "react";
 import RecipesCount from "../RecipeCard/RecipesCount";
 import s from "@/components/Tags/FiltersBar.module.css"
 
 export default function FiltersBar() {
-  const { selected } = useTags();
-  const [openId, setOpenId] = useState(null)
-
-  const toggle = (id) => setOpenId(curr => (curr === id ? null : id));
-
+  const { selected, upper } = useTags()
 
   return (
     <>
@@ -21,39 +16,37 @@ export default function FiltersBar() {
             <FilterCard
               type="ingredients"
               label="Ingrédients"
-              isOpen={openId === "ingredients"}
-              onToggle={() => toggle("ingredients")}
             />
             <FilterCard
               type="appliances"
               label="Appareils"
-              isOpen={openId === "appliances"}
-              onToggle={() => toggle("appliances")}
             />
             <FilterCard
               type="ustensils"
               label="Ustensiles"
-              isOpen={openId === "ustensils"}
-              onToggle={() => toggle("ustensils")}
             />
           </div>
 
           {/* rangée des tags sélectionnés */}
           <div className={s.tags}>
             {selected.ingredients.map((v) => (
-              <Tag key={`ing-${v}`} type="ingredients">{v}</Tag>
+              <Tag key={`ing-${v}`} type="ingredients">{upper(v)}</Tag>
             ))}
             {selected.appliances.map((v) => (
-              <Tag key={`app-${v}`} type="appliances">{v}</Tag>
+              <Tag key={`app-${v}`} type="appliances">{upper(v)}</Tag>
             ))}
             {selected.ustensils.map((v) => (
-              <Tag key={`ust-${v}`} type="ustensils">{v}</Tag>
+              <Tag key={`ust-${v}`} type="ustensils">{upper(v)}</Tag>
+            ))}
+            {selected.keywords.map((v) => (
+              <Tag key={`ust-${v}`} type="keywords">{upper(v)}</Tag>
             ))}
           </div>
-                  <div className={s.counter} >
+
+        <div className={s.counter} >
           <RecipesCount />
         </div>
-          </div>
+    </div>
 
     </>
   );

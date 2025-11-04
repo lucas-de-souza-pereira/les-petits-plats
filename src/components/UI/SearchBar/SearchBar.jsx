@@ -1,16 +1,47 @@
 "use client"
 
 import s from '@/components/UI/SearchBar/SearchBar.module.css'
-import { useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
+import { useTags } from '@/components/Tags/FilterContext'
+
 
 export default function SearchBar() {
-  const[q,setQ] = useState("")
+  const { addTag, setLiveQuery } = useTags()
+  const [q, setQ] = useState("")
+  const timerRef = useRef(null)
+
+  const onChange = (e) => {
+      const value = e.target.value
+      setQ(value)
+
+      clearTimeout(timerRef.current)
+      timerRef.current = setTimeout(() => {
+        const v = value.trim()
+        setLiveQuery(v.length >= 3 ? v : "")
+      }, 300)
+    }
+
+    const onSubmit = (e) => {
+      e.preventDefault()
+      const v = q.trim()
+      if (!v) return
+
+      addTag("keywords", v)      
+      clearTimeout(timerRef.current)
+      setLiveQuery("")
+      setQ("")
+    }
+
+    const onClear = () => {
+              clearTimeout(timerRef.current)
+              setLiveQuery("")
+              setQ("")}
+
+    useEffect(() => () => clearTimeout(timerRef.current), [])
+
   return (
       <form className={s.heroSearch}
-          onSubmit={(e)=>{
-            e.preventDefault()
-            console.log(q)}}
-      >
+          onSubmit={onSubmit} >
 
         <input
         type="search"
@@ -18,8 +49,10 @@ export default function SearchBar() {
         value={q}
         className={s.searchBar}
         placeholder="Rechercher une recette, un ingrédient, ..."
-        onChange={(e) => setQ(e.target.value)}
+        onChange={onChange}
         />
+
+        {/* loop */}
         <button 
         className={s.searchCta}
         type='submit'
@@ -29,6 +62,23 @@ export default function SearchBar() {
             <line x1="18.3536" y1="18.6464" x2="27.3536" y2="27.6464" stroke="currentColor"/>
           </svg>
         </button>
+
+        {/* cross */}
+        {q && (
+              <button 
+              className={s.cross} onClick={onClear}
+              aria-label="Effacer la recherche"
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.0833 14.0833L7.58325 7.58334M7.58325 7.58334L1.08325 1.08334M7.58325 7.58334L14.0833 1.08334M7.58325 7.58334L1.08325 14.0833" stroke="#7A7A7A" strokeWidth="2.16667" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+            </button>
+          )}
+
+
       </form>
   )
 }
+
+
+
