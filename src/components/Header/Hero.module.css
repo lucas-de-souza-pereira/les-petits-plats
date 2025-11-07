@@ -9,8 +9,8 @@
 .sm{min-height: 128px;}
 .md{min-height: 667px;}
 .full{  
-    min-height: clamp(420px, 83vh, 805px);
-    max-height: 805px; 
+    min-height: clamp(420px, 90vh, 1180px);
+    max-height: 1180px; 
     ;}
 
 .heroBg {
