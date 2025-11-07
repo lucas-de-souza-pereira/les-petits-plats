@@ -62,7 +62,9 @@ src/
 │
 ├── components/
 │   ├── Recipes/
-│   │   ├── RecipeCard.jsx     # composant réutilisable pour afficher une recette
+│   │   ├── ...                # composants réutilisable pour composer une recette
+│   ├── RecipesCard/
+│   │   ├── RecipeCard.jsx     # composant réutilisable pour afficher la présentation d'une recette
 │   │   ├── RecipesGrid.jsx    # grille des recettes filtrées
 │   │
 │   ├── Tags/

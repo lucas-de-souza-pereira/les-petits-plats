@@ -115,7 +115,7 @@ export function TagsProvider({ data, children }) {
   const clearAll = () => setSelected({ ingredients: [], appliances: [], ustensils: [], keywords:[] })
 
   return (
-    <TagsCtx.Provider value={{ selected, available, filteredRecipes, addTag, removeTag, clearAll, setLiveQuery , upper}}>
+    <TagsCtx.Provider value={{ selected, available, filteredRecipes, addTag, removeTag, clearAll, liveQ , setLiveQuery , upper}}>
       {children}
     </TagsCtx.Provider>
   )
